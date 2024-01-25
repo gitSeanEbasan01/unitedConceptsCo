@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap');
+
+
+
+$NunitoSans-Font: 'Nunito Sans', sans-serif;
+
+$work-section-card: 350px;
+
+$slightly-white: rgb(245, 245, 245);
+
+$palette-orange00: #ffea00;
+$palette-orange01: #ed8a00;
+$palette-orange02: #d34d00;
+$palette-orange03: #a20f73;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $NunitoSans-Font, sans-serif;
+}
+
+
+main{
+    position: relative;
+    width: 100%;
+}
+
+.uc-navigation{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 5;
+
+    .ucn-name{
+        font-size: 30px;
+
+        margin-left: 50px;
+
+        color: white;
+        opacity: 0;
+
+        transition: opacity .5s ease-in-out;
+
+        &.open{
+            opacity: 1;
+        }
+    }
+    .ucn-section-container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        width: 700px;
+
+        margin-right: 50px;
+
+        & > *{
+            text-decoration: none;
+            color: white;
+
+            opacity: 0;
+
+            transition: opacity .5s ease-in-out;
+        }
+        &.open > *{
+            opacity: 1;
+        }
+        
+        .work-link{
+            transition-delay: .5s;
+        }
+        .services-link{
+            transition-delay: .75s;
+        }
+        .team-link{
+            transition-delay: 1s;
+        }
+        .philosophy-link{
+            transition-delay: 1.25s;
+        }
+        .portfolio-link{
+            transition-delay: 1.5s;
+        }
+        .contact-link{
+            transition-delay: 1.75s;
+        }
+    }
+}
+
+.uc-intro{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    background-color: blue;
+    overflow: hidden;
+
+    .uci-title-description{
+        position: relative;
+        left: 0;
+        top: -40px;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        z-index: 4;
+
+        .title{
+            font-size: 60px;
+            margin-bottom: 20px;
+
+            transform: translateY(-30px);
+
+            opacity: 0;
+            color: white;
+
+            transition: transform .5s ease-in-out 1s, opacity .5s ease-in-out 1s;
+        }
+        .line{
+            width: 0;
+            height: 2px;
+
+            background-color: white;
+
+            transition: width .5s ease-in-out .75s;
+        }
+        .description{
+            font-size: 25px;
+            margin-top: 20px;
+
+            transform: translateY(30px);
+
+            color: white;
+            opacity: 0;
+
+            transition: transform .5s ease-in-out 1.25s, opacity .5s ease-in-out 1.25s;
+        }
+
+        &.open{
+            .title, .description{
+                transform: translateY(0);
+                opacity: 1; //
+            }
+            .line{
+                width: 100px;
+            }
+        }
+    }
+
+    .uci-image{
+        position: absolute;
+        transform: scale(.5);
+        width: 720px;
+        height: 600px;
+        
+        z-index: 2;
+        opacity: 0;
+        background-image: url('../imgs/Triangle.png');
+        background-repeat: no-repeat;
+
+        mix-blend-mode: soft-light;
+
+        transition: opacity .5s ease-in-out;
+
+        &.open{
+            opacity: 1;
+        }
+    }
+    .img0{
+        left: 805px;
+        top: 92px;
+
+        transition-delay: 1s;
+    }
+    .img1{
+        transform: rotate(180deg) scale(.5);
+        left: 650px;
+        top: 130px;
+
+        transition-delay: 1.25s;
+    }
+    .img2{
+        transform: scale(.3);
+        left: 495px;
+        top: 50px;
+
+        transition-delay: 1.5s;
+    }
+    .img3{
+        transform: rotate(180deg) scale(.3);
+        left: 399px;
+        top: 70px;
+
+        transition-delay: 1.75s;
+    }
+    .img4{
+        transform: scale(.3);
+        left: 399px;
+        top: -120px;
+
+        transition-delay: 2s;
+    }
+    .img5{
+        transform: rotate(180deg) scale(.3);
+        left: 301px;
+        top: -97px;
+
+        transition-delay: 2.25s;
+    }
+    .img-small6{
+        transform: scale(.1);
+        left: 534px;
+        top: -60px;
+
+        transition-delay: 2.5s;
+    }
+    .img-small7{
+        transform: rotate(180deg) scale(.1);
+        left: 496px;
+        top: -52px;
+
+        transition-delay: 2.75s;
+    }
+    
+    .uci-background{
+        position: absolute;
+        transform: translate(-50% ,-50%);
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+        background-image: linear-gradient(
+            135deg, 
+            $palette-orange00, 
+            $palette-orange01,
+            $palette-orange02,
+            $palette-orange03
+        );
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+
+        transition: background-position 1s ease-in-out .8s;
+    }
+
+    .diagonal-separator{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 120px;
+
+        z-index: 3;
+        background-color: white;
+
+        clip-path: polygon(100% 100%, 100% 0, 0 100%);
+    }
+}
+
+#uc-work-section{
+    position: relative;
+    transform: translateY(-30px);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .ucw-title-description{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        width: 100%;
+        height: 200px;
+        
+        margin-bottom: 30px;
+
+        h2{
+            font-size: 45px;
+
+            opacity: 0;
+            transform: translateY(-50px);
+
+            transition: opacity .5s ease-in-out, transform .5s ease-in-out;
+        }
+        p{
+            font-size: 20px;
+
+            opacity: 0;
+            transform: translateY(-50px);
+
+            transition: opacity .5s ease-in-out .25s, transform .5s ease-in-out .25s;
+        }
+        &.observed{
+            h2, p{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+    .ucw-divider{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        width: 200px;
+        height: 20px;
+
+        .left-line, .right-line{
+            width: 0;
+            height: 3px;
+
+            background-color: $palette-orange03;
+
+            transition: width .5s ease-in-out;
+        }
+        .mid-circle{
+            width: 15px;
+            height: 15px;
+
+            border-radius: 50%;
+
+            opacity: 0;
+            background-color: $palette-orange03;
+
+            transition: opacity .5s ease-in-out .5s;
+        }
+
+        &.observed{
+            .left-line, .right-line{
+                width: 70px;
+            }
+            .mid-circle{
+                opacity: 1;
+            }
+        }
+    }
+    .ucw-cards{
+        position: relative;
+        width: 100%;
+        height: 300px;
+        
+        margin-top: 75px;
+
+        .left-card, .mid-card, .right-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            p{
+                text-align: center;
+                padding: 0 20px;
+            }
+            button{
+                padding: 7px;
+                
+                cursor: pointer;
+                text-decoration: none;
+                background-color: transparent;
+
+                transition: background-color .1s ease-in-out;
+            }
+        }
+
+        .left-card{
+            position: absolute;
+            transform: translate(-50% ,-50%);
+            left: calc(50% - $work-section-card);
+            top: 70%;
+            width: $work-section-card;
+            height: 100%;
+
+            box-shadow: -3px 0px 20px rgba(0, 0, 0, 0.212);
+
+            z-index: 1;
+            opacity: 0;
+            background-color: white;
+
+            transition: opacity .5s ease-in-out .5s, top .3s ease-in-out .3s;
+
+            button{
+                border: 2px solid black;
+                border-radius: 3px;
+
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.300);
+                }
+            }
+        }
+        .mid-card{
+            position: absolute;
+            transform: translate(-50% ,-50%);
+            left: 50%;
+            top: 70%;
+            width: $work-section-card;
+            height: 110%;
+
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.212);
+
+            z-index: 2;
+            opacity: 0;
+            background-color: $palette-orange02;
+
+            transition: opacity .5s ease-in-out, top .5s ease-in-out;
+
+            & > *{
+                color: white;
+            }
+            button{
+                border: 2px solid white;
+                border-radius: 3px;
+
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.300);
+                }
+            }
+        }
+        .right-card{
+            position: absolute;
+            transform: translate(-50% ,-50%);
+            left: calc(50% + $work-section-card);
+            top: 70%;
+            width: $work-section-card;
+            height: 100%;
+
+            box-shadow: -3px 0px 20px rgba(0, 0, 0, 0.212);
+
+            z-index: 1;
+            opacity: 0;
+            background-color: white;
+
+            transition: opacity .5s ease-in-out .65s, top .5s ease-in-out .65s;
+
+            button{
+                border: 2px solid black;
+                border-radius: 3px;
+
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.300);
+                }
+            }
+        }
+
+
+        &.observed{
+            .left-card, .mid-card, .right-card{
+                opacity: 1;
+                top: 50%;
+            }
+        }
+    }
+}
+
+
+#uc-services-section{
+    background-color: bisque;
+}
+
